@@ -69,24 +69,4 @@ if (scrollIndicator) {
   });
 }
 
-console.log('Script loaded!');
-document.addEventListener('DOMContentLoaded', function() {
-  const tabs = document.querySelectorAll('.portfolio-tab');
-  const grids = document.querySelectorAll('.portfolio-card-grid');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const cat = tab.getAttribute('data-category');
-      grids.forEach(grid => {
-        if (grid.getAttribute('data-category') === cat) {
-          grid.classList.add('active-grid');
-          grid.classList.remove('inactive-grid');
-        } else {
-          grid.classList.remove('active-grid');
-          grid.classList.add('inactive-grid');
-        }
-      });
-    });
-  });
-}); 
+console.log('Script loaded!'); 

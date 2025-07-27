@@ -753,62 +753,157 @@ footer {
   }
 }
 @media (max-width: 900px) {
-  .about-container {
+  /* Prevent horizontal scroll */
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Disable scroll snapping on mobile */
+  html {
+    scroll-snap-type: none;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .section {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+    min-height: auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  /* Hide navbar on mobile */
+  .navbar {
+    display: none;
+  }
+
+  /* Container adjustments */
+  .terminal-hero {
+    width: calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
+    margin: 0 auto;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .about-grid {
+    display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
   }
-  .portfolio {
-    padding-top: 2rem;
-  }
-  .projects {
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .about-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    gap: 1.2rem;
-    padding: 0 0.5rem;
-  }
-  .profile-card, .timeline-card, .works-card, .visuals-card {
-    grid-row: auto;
-    grid-column: auto;
-    min-height: 180px;
-    height: auto;
-  }
-  .timeline-card {
-    order: 3;
-    min-height: 180px;
-    margin-top: 1.2rem;
-  }
-  .about-header {
-    padding: 0 0.5rem;
-  }
-  .about-title {
-    font-size: 1.5rem;
-  }
-  .about-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 220px);
-    gap: 1rem;
-    padding: 0 0.5rem;
-  }
+
   .profile-card {
-    grid-row: auto;
-    grid-column: auto;
+    display: none;
   }
-  @media (max-width: 700px) {
-    .blobs-bg .blob {
-      filter: blur(24px);
-    }
-    .terminal-hero {
-      padding: 1.2rem 0.5rem 1.2rem 0.5rem;
-      max-width: 98vw;
-    }
-    .terminal-body {
-      font-size: 1rem;
-    }
+
+  /* Hide Projects and Socials buttons */
+  .works-card,
+  .visuals-card,
+  .about-card-link {
+    display: none;
+  }
+
+  .timeline-card {
+    order: 2;
+    min-height: 350px;
+    padding: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-header {
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  /* Project section adjustments */
+  .project-portfolio {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .portfolio-grid {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .portfolio-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  /* Remove footer animation */
+  .scroll-prompt {
+    animation: none;
+  }
+
+  .scroll-indicator {
+    animation: none;
+  }
+
+  /* Adjust section heights for mobile */
+  .projects-section,
+  .project-portfolio {
+    min-height: auto;
+    height: auto;
+    padding-bottom: 3rem;
+  }
+
+  /* Fix navbar width */
+  .navbar-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 700px) {
+  .terminal-hero {
+    padding: 1.2rem;
+  }
+
+  .terminal-headline {
+    font-size: 1.8em;
+  }
+
+  .terminal-subtext {
+    font-size: 1.1em;
+  }
+
+  .about-grid {
+    padding: 0.8rem;
+  }
+
+  .timeline-card {
+    min-height: 300px;
   }
 } 
 /* --- Project Portfolio Card Grid --- */
